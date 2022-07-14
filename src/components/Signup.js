@@ -17,14 +17,14 @@ function Signup() {
       },
 
      onSubmit: values => {
-       console.log(JSON.stringify(values, null, 2));
+       alert(JSON.stringify(values, null, 2));
      },
      validationSchema,
    });
 
   return (
      <div>
-    <h2>Let's get you started</h2>
+    <h3>Let's get you started</h3>
     
     <form onSubmit={formik.handleSubmit}>
     <label htmlFor="fullName">Full Name</label>
@@ -103,6 +103,7 @@ function Signup() {
        />
        {formik.errors.location && formik.touched.location && (<div className='error'>Location is required</div>)}
          
+    <br/>
     <br/>
     <button type="submit">Sign Up</button>
     </form>
