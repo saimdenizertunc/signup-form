@@ -5,3 +5,8 @@ label{
 #countryCode{
     width: 3em;
 }
+
+.error{
+    color: red;
+    font-size: 9px;
+}
