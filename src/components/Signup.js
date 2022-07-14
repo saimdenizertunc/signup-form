@@ -17,12 +17,11 @@ function Signup() {
       },
 
      onSubmit: values => {
-
        console.log(JSON.stringify(values, null, 2));
-
      },
      validationSchema,
    });
+
   return (
      <div>
     <h2>Let's get you started</h2>
@@ -33,6 +32,7 @@ function Signup() {
          id="fullName"
          name="fullName"
          type="text"
+         placeholder='Deniz Ertunç'
          onChange={formik.handleChange}
          value={formik.values.fullName}
        />
@@ -44,6 +44,7 @@ function Signup() {
          id="email"
          name="email"
          type="e-mail"
+         placeholder='xxx@abc.com'
          onChange={formik.handleChange}
          value={formik.values.email}
        />
@@ -55,15 +56,19 @@ function Signup() {
        <input
          id="countryCode"
          name="countryCode"
+         placeholder='+90'
          onChange={formik.handleChange}
          value={formik.values.countryCode}
+
        />
        <input
          id="phoneNumber"
          name="phoneNumber"
+         placeholder='123456789'
          onChange={formik.handleChange}
          value={formik.values.phoneNumber}
        />
+       {formik.errors.phoneNumber && formik.touched.phoneNumber && (<div className='error'>Phone Number is not valid</div>)}
 
        <label htmlFor="password">Create Password</label>
 
@@ -96,6 +101,7 @@ function Signup() {
          onChange={formik.handleChange}
          value={formik.values.location}
        />
+       {formik.errors.location && formik.touched.location && (<div className='error'>Location is required</div>)}
          
     <br/>
     <button type="submit">Sign Up</button>
